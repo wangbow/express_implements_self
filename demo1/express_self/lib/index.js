@@ -33,10 +33,12 @@ const createApplication = () => {
                 for (let i = 1; i < router.length; i++) {
                     const { path, method, handler } = router[i];
                     if (path === pathname && method === methodName) {
+                        console.log('aa')
                         return handler(req, res);
                     }
                 }
 
+                console.log('bb')
                 return router[0].handler(req, res);
             })
 
